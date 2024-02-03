@@ -1,0 +1,14 @@
+name: Test
+
+on: [push]
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Test Hello World 
+      uses: Zeyu-Xie/Lavender-Dir-Listing@main
