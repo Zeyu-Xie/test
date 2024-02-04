@@ -19,7 +19,7 @@ jobs:
 
       # Step 2. Generate the artifact
       - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v3.0.0
+        uses: Zeyu-Xie/Lavender-Dir-Listing
         with:
           # directory to generate the artifact
           FOLDER: .
@@ -28,4 +28,4 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'web'
+          path: '/web'
