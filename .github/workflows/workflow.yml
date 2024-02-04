@@ -22,7 +22,7 @@ jobs:
         uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.18
         with:
           # directory to generate the artifact
-          FOLDER: ./
+          FOLDER: /
 
       # Step 3. Upload the artifact
       - name: Upload artifact
