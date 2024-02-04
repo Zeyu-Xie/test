@@ -19,7 +19,7 @@ jobs:
 
       # Step 2. Generate the artifact
       - name: Generate Directory Listings
-        uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.16
+        uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.17
         with:
           # directory to generate the artifact
           FOLDER: ./
