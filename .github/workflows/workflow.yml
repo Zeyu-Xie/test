@@ -3,12 +3,29 @@ name: Test
 on: [push]
 
 jobs:
-  hello-world:
+  pages_directory_listing:
+
     runs-on: ubuntu-latest
+    name: Pages Directory Listing
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
 
-    - name: Test Hello World 
-      uses: Zeyu-Xie/Lavender-Dir-Listing@main
+      # Step 1. Checkout Repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          # branch to check out
+          ref: main
+
+      # Step 2. Generate the artifact
+      - name: Generate Directory Listings
+        uses: jayanta525/github-pages-directory-listing@v3.0.0
+        with:
+          # directory to generate the artifact
+          FOLDER: .
+
+      # Step 3. Upload the artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
