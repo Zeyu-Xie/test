@@ -37,7 +37,7 @@ jobs:
           sudo chown $USER ./web/index.html
           # 赋予文件写权限
           chmod +w ./web/index.html
-          rm ./web/index.html
+          sudo rm ./web/index.html
           tar -czf artifact.tar.gz ./web --hard-dereference
           
 
