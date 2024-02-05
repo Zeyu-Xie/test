@@ -26,6 +26,8 @@ jobs:
 
       # Step 3. Upload the artifact
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
+          name: web
+          path: web
           path: web
