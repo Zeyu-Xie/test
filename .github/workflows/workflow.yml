@@ -34,9 +34,9 @@ jobs:
         run: |
           
           sudo rm ./web/index.html
-          sudo mv ./web ./_site
+          sudo mv -R ./web ./_site
 
-          ls .
+          ls -R .
           
           tar -czf artifact.tar.gz ./_site --hard-dereference
           
