@@ -40,7 +40,8 @@ jobs:
     
     permissions:
       pages: write
-    
+      id-token: write
+
     runs-on: ubuntu-latest
     name: Deploy the Artifact
     
@@ -50,7 +51,7 @@ jobs:
 
     steps:
 
-      # Step 1. Deploy to GitHub Pages
+	    # Step 1. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1          
