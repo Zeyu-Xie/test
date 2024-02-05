@@ -63,4 +63,5 @@ jobs:
         id: deployment
         uses: actions/upload-pages-artifact@v1
         with:
-          artifact_name: artifact
+          name: artifact
+          path: _site
