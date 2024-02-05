@@ -36,9 +36,24 @@ jobs:
           name: github-pages
           path: ./web
           
-      # Step 4. Deploy?
+  # Job 2. Deploy the artifact
+  deploy:
+
+    needs: pages_directory_listing
+    
+    runs-on: ubuntu-latest
+    name: Deploy
+    
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+
+      # Step 1. Deploy the artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages
+        uses: actions/deploy-pages@v1          
