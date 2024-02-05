@@ -33,7 +33,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          name: artifact
+          name: github-pages
           path: ./web
           
       # Step 4. Deploy?
@@ -41,4 +41,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: artifact
+          artifact_name: github-pages
