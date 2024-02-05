@@ -64,4 +64,4 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: artifact
-          path: _site
+          path: /_site
