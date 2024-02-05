@@ -30,3 +30,21 @@ jobs:
         with:
           name: web
           path: ./web
+  
+  # Job 2. Deploy New Site
+  deploy:
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    name: Deploy New Site
+    needs: pages_directory_listing
+
+    steps:
+      
+      # Step 1. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
