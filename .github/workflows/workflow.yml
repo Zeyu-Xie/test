@@ -28,6 +28,7 @@ jobs:
         with:
           # directory to generate the artifact
           FOLDER: .
+      
       # Step 3. Compress
       - name: Create artifact
         run: tar -czf artifact.tar.gz ./web --hard-dereference
@@ -55,6 +56,6 @@ jobs:
       # Step 1. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           artifact_name: artifact
