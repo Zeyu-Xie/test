@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: artifact
-          path: ./artifact.tar.gz
+          path: ./_site
 
       - name: Deploy to GitHub Pages
         uses: actions/upload-pages-artifact@v1
