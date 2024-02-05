@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: /github/workspace
+          path: .
           
   # Job 2. Deploy the artifact
   deploy:
