@@ -28,13 +28,16 @@ jobs:
         with:
           # directory to generate the artifact
           FOLDER: .
+      # Step 3. Compress
+      - name: Create artifact
+        run: tar -czf artifact.tar.gz ./web --hard-dereference
 
-      # Step 3. Upload the artifact
+      # Step 4. Upload the artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: web
-          path: ./web
+          name: artifact
+          path: ./artifact.tar.gz
   
   # Job 2. Deploy New Site
   deploy:
@@ -54,4 +57,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact_name: web
+          artifact_name: artifact
