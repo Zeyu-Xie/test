@@ -32,6 +32,7 @@ jobs:
       # Step 3. Compress
       - name: Create artifact
         run: |
+          ls -R .
           rm ./web/index.html
           tar -czf artifact.tar.gz ./web --hard-dereference
           
