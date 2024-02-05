@@ -33,6 +33,8 @@ jobs:
       - name: Create artifact
         run: |
           ls -R .
+          # 更改文件所有者为当前用户
+          sudo chown $USER ./web/index.html
           # 赋予文件写权限
           chmod +w ./web/index.html
           rm ./web/index.html
