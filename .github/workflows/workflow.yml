@@ -2,11 +2,6 @@ name: Test
 
 on: [push]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   pages_directory_listing:
 
@@ -24,7 +19,7 @@ jobs:
 
       # Step 2. Generate the artifact
       - name: Generate Directory Listings
-        uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.30
+        uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.31
         with:
           # directory to generate the artifact
           FOLDER: .
@@ -34,7 +29,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: ./_site_Lavender_Dir_Listing
+          path: /github/workspace
           
   # Job 2. Deploy the artifact
   deploy:
