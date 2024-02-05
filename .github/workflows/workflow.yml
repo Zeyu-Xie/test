@@ -3,6 +3,8 @@ name: Test
 on: [push]
 
 jobs:
+
+	# Job 1. Generate the Artifact
   pages_directory_listing:
 
     runs-on: ubuntu-latest
@@ -24,31 +26,28 @@ jobs:
           # directory to generate the artifact
           FOLDER: .
           
-      # Step 3. Deploy
-      - name: Deploy to GitHub Pages
+      # Step 3. Upload Pages Artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v2
         with:
           name: github-pages
           path: .
           
-  # Job 2. Deploy the artifact
-  deploy:
+  # Job 2. Deploy the Artifact
+  deploy_the_artifact:
 
     needs: pages_directory_listing
     
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy the Artifact
     
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
 
-      # Step 1. Deploy the artifact to GitHub Pages
+			# Step 1. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1          
