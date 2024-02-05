@@ -34,7 +34,7 @@ jobs:
         run: |
           
           sudo rm ./web/index.html
-          sudo mv -R ./web ./_site
+          sudo mv ./web ./_site
 
           ls -R .
           
