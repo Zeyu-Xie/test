@@ -54,4 +54,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v2
         with:
-          artifact-name: web
+          artifact_name: web
