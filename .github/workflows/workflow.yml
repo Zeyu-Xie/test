@@ -61,6 +61,6 @@ jobs:
       # Step 1. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v1
         with:
           artifact_name: artifact
