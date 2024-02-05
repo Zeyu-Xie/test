@@ -32,13 +32,13 @@ jobs:
       # Step 3. Compress
       - name: Create artifact
         run: |
-          ls -R .
-          # 更改文件所有者为当前用户
-          sudo chown $USER ./web/index.html
-          # 赋予文件写权限
-          chmod +w ./web/index.html
+          
           sudo rm ./web/index.html
-          tar -czf artifact.tar.gz ./web --hard-dereference
+          sudo mv ./web ./_site
+
+          ls .
+          
+          tar -czf artifact.tar.gz ./_site --hard-dereference
           
 
       # Step 4. Upload the artifact
