@@ -32,7 +32,7 @@ jobs:
       # Step 3. Compress
       - name: Create artifact
         run: |
-          sudo rm ./web/index.html
+          sudo rm ./web/README.md
           sudo mv ./web ./_site
           ls -R .
           tar -czf artifact.tar.gz ./_site --hard-dereference
