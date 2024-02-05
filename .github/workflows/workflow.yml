@@ -19,14 +19,14 @@ jobs:
 
       # Step 2. Generate the artifact
       - name: Generate Directory Listings
-        uses: Zeyu-Xie/Lavender-Dir-Listing@v0.0.31
+        uses: Zeyu-Xie/Lavender-Dir-Listing@v1
         with:
           # directory to generate the artifact
           FOLDER: .
           
       # Step 3. Deploy
       - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           name: github-pages
           path: .
