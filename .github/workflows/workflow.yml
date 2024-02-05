@@ -24,9 +24,6 @@ jobs:
           # directory to generate the artifact
           FOLDER: .
 
-      - name: test
-        run: ls -R .
-
       # Step 3. Upload the artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v2
