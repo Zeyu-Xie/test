@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: github-pages
-          path: ./web
+          path: ./_site_Lavender_Dir_Listing
           
   # Job 2. Deploy the artifact
   deploy:
